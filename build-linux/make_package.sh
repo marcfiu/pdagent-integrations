@@ -74,6 +74,7 @@ _SIGN_OPTS=""
 if [ "$pkg_type" = "rpm" ]; then
     _SIGN_OPTS="--rpm-sign"
 fi
+_SIGN_OPTS=""
 
 cd target
 
@@ -98,7 +99,7 @@ $FPM -s dir \
     -t $pkg_type \
     --name "pdagent-integrations" \
     --description "$_DESC" \
-    --version "1.6.2" \
+    --version "${MYVERSION}" \
     --architecture all \
     --url "http://www.pagerduty.com" \
     --license 'Open Source' \
